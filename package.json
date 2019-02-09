@@ -21,5 +21,8 @@
   "homepage": "https://github.com/hitode909/sb2md#readme",
   "devDependencies": {
     "ava": "^1.2.1"
+  },
+  "dependencies": {
+    "commander": "^2.19.0"
   }
 }

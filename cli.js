@@ -1,6 +1,36 @@
 #!/usr/bin/env node
-const { convert } = require("./lib/convert");
+const fs = require('fs');
+const path = require('path');
+const command = require('commander');
+const settings = require('./package.json');
+const { convert } = require('./lib/convert');
 
-var source = require('fs').readFileSync('/dev/stdin', 'utf8');
+let stdin = '';
 
-console.log(convert(source));
+command
+  .version(settings.version)
+  .description(settings.description)
+  .usage('\n\tsb2mb [file] \n\tcat hoge.md | sb2mb')
+  .arguments('[file]')
+  .action(async (file) => {
+    if (file) {
+      const result = convert(fs.readFileSync(path.resolve(file), 'utf8'));
+      console.log(result);
+    } else {
+      command.help();
+    }
+  });
+
+if (process.stdin.isTTY) {
+  command.parse(process.argv)
+} else {
+  process.stdin.on('readable', () => {
+    const chunk = process.stdin.read();
+    if (chunk !== null) {
+      stdin += chunk;
+    }
+  })
+  process.stdin.on('end', async () => {
+    console.log(convert(stdin));
+  })
+}
