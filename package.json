@@ -12,6 +12,9 @@
   },
   "author": "hitode909",
   "license": "ISC",
+  "bin": {
+    "sb2md": "./cli.js"
+  },
   "bugs": {
     "url": "https://github.com/hitode909/sb2md/issues"
   },
