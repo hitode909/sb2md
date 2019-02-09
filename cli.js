@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const command = require('commander');
 const settings = require('./package.json');
-const { convert } = require('./lib/convert');
+const { sb2md } = require('./lib/sb2md');
 
 let stdin = '';
 
@@ -14,7 +14,7 @@ command
   .arguments('[file]')
   .action(async (file) => {
     if (file) {
-      const result = convert(fs.readFileSync(path.resolve(file), 'utf8'));
+      const result = sb2md(fs.readFileSync(path.resolve(file), 'utf8'));
       console.log(result);
     } else {
       command.help();
@@ -31,6 +31,6 @@ if (process.stdin.isTTY) {
     }
   })
   process.stdin.on('end', async () => {
-    console.log(convert(stdin));
+    console.log(sb2md(stdin));
   })
 }
