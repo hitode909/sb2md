@@ -1,0 +1,7 @@
+[** sb2md]
+
+`sb2md` converts Scrapbox notation to Markdown.
+
+code:bash
+ $ sb2md README.sb > README.md
+
