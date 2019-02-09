@@ -1,0 +1,22 @@
+{
+  "name": "sb2md",
+  "version": "1.0.0",
+  "description": "Convert Scrapbox notation to Markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/hitode909/sb2md.git"
+  },
+  "author": "hitode909",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hitode909/sb2md/issues"
+  },
+  "homepage": "https://github.com/hitode909/sb2md#readme",
+  "devDependencies": {
+    "ava": "^1.2.1"
+  }
+}
