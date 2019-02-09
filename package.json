@@ -2,7 +2,7 @@
   "name": "sb2md",
   "version": "1.0.0",
   "description": "Convert Scrapbox notation to Markdown",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "test": "ava"
   },
