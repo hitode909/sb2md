@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-const { convert } = require("./lib/convert");
-exports.convert = convert;
+const { sb2md } = require("./lib/sb2md");
+exports.convert = sb2md;
