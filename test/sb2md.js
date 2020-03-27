@@ -5,6 +5,10 @@ test('indent', t => {
     t.is(sb2md(' a'), '  - a');
 });
 
+test('triple', t => {
+  t.is(sb2md("[*** 強調]"), '<b>強調</b>');
+});
+
 test('link', t => {
   t.is(sb2md('[日本語]'), '[日本語](./%E6%97%A5%E6%9C%AC%E8%AA%9E.md)');
 });
