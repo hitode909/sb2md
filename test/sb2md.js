@@ -5,12 +5,16 @@ test('indent', t => {
     t.is(sb2md(' a'), '  - a');
 });
 
-test('single', t => {
+test('single em', t => {
   t.is(sb2md("[* 強調]"), '<b>強調</b>');
 });
 
-test('triple', t => {
+test('triple em', t => {
   t.is(sb2md("[*** 強調]"), '<b style="font-size:1.4em;" class="level-3">強調</b>');
+});
+
+test('not em but link', t => {
+  t.is(sb2md('[*test]'), "[*test](./*test.md)");
 });
 
 test('link', t => {
