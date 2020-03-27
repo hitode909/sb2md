@@ -5,8 +5,12 @@ test('indent', t => {
     t.is(sb2md(' a'), '  - a');
 });
 
+test('single', t => {
+  t.is(sb2md("[* 強調]"), '<b>強調</b>');
+});
+
 test('triple', t => {
-  t.is(sb2md("[*** 強調]"), '<b>強調</b>');
+  t.is(sb2md("[*** 強調]"), '<b style="font-size:1.4em;" class="level-3">強調</b>');
 });
 
 test('link', t => {
