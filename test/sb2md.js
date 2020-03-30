@@ -5,8 +5,24 @@ test('indent', t => {
     t.is(sb2md(' a'), '  - a');
 });
 
+test('single em', t => {
+  t.is(sb2md("[* 強調]"), '<b>強調</b>');
+});
+
+test('triple em', t => {
+  t.is(sb2md("[*** 強調]"), '<b style="font-size:1.4em;" class="level-3">強調</b>');
+});
+
+test('not em but link', t => {
+  t.is(sb2md('[*test]'), "[*test](./*test.md)");
+});
+
 test('link', t => {
   t.is(sb2md('[日本語]'), '[日本語](./%E6%97%A5%E6%9C%AC%E8%AA%9E.md)');
+});
+
+test('numerical link', t => {
+  t.is(sb2md('[0]'), "[0](./0.md)");
 });
 
 test('hashtag', t => {
