@@ -1,4 +1,4 @@
-import test from 'ava';
+const test = require('ava');
 const { sb2md } = require('../lib/sb2md');
 
 test('indent', t => {

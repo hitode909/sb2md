@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const command = require('commander');
+const { program: command } = require('commander');
 const settings = require('./package.json');
 const { sb2md } = require('./lib/sb2md');
 
