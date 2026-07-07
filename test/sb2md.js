@@ -41,6 +41,14 @@ test('# at end of line is not hashtag', t => {
   t.is(sb2md('a #'), 'a #');
 });
 
+test('# in url is not hashtag', t => {
+  t.is(sb2md('https://example.com/page?q=1#section'), 'https://example.com/page?q=1#section');
+});
+
+test('hashtag after space is hashtag', t => {
+  t.is(sb2md('see #tag'), 'see [#tag](./tag.md)');
+});
+
 test('space', t => {
   t.is(sb2md(' [日本語] [* hoge]'), '  - [日本語](./%E6%97%A5%E6%9C%AC%E8%AA%9E.md) <b>hoge</b>');
 });
