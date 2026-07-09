@@ -10,7 +10,7 @@ let stdin = '';
 command
   .version(settings.version)
   .description(settings.description)
-  .usage('\n\tsb2mb [file] \n\tcat hoge.md | sb2mb')
+  .usage('\n\tsb2md [file] \n\tcat hoge.md | sb2md')
   .arguments('[file]')
   .action(async (file) => {
     if (file) {
